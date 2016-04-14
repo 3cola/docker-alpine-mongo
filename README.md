@@ -1,3 +1,5 @@
+Forked from [mvertes/dokcer-alpine-mongo](https://github.com/mvertes/docker-alpine-mongo)
+
 # docker-alpine-mongo
 
 This repository contains Dockerfile for [MongoDB 3.2](https://www.mongodb.org)
@@ -11,24 +13,26 @@ As a prerequisite, you need [Docker](https://docker.com) to be installed.
 
 To download this image from the public docker hub:
 
-	$ docker pull mvertes/alpine-mongo
+	$ docker pull 3cola/alpine-mongo
 
 To re-build this image from the dockerfile:
 
-	$ docker build -t mvertes/alpine-mongo .
+	$ docker build -t 3cola/alpine-mongo .
 
 ## Usage
 
 To run `mongod`:
 
-	$ docker run -d --name mongo -p 27017:27017 mvertes/alpine-mongo
+	$ docker run -d --name mongo -p 27017:27017 3cola/alpine-mongo
+
+Or do not expose port and use a link in the container that need a connection to the db...
 
 You can also specify the database repository where to store the data
 with the volume -v option:
 
     $ docker run -d --name mongo -p 27017:27017 \
 	  -v /somewhere/onmyhost/mydatabase:/data/db \
-	  mvertes/alpine-mongo
+	  3cola/alpine-mongo
 
 Now, on the same host where the mongodb container is running, to trace
 database network activity in real-time:
