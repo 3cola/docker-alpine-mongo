@@ -1,7 +1,7 @@
 VERSION = 3.2.4-1
 IMAGE = 3cola/alpine-mongo:$(VERSION)
 
-all:
+all: image publish
 
 image:
 	docker build -t $(IMAGE) --no-cache .
